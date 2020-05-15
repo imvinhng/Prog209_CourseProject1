@@ -22,8 +22,9 @@ body {
     font-family: serif, Helvetica, sans-serif;
 }
 
-.signout_btn{
-  display : none;
+.signout_btn {
+  /* display: none; */
+  visibility: hidden;
 }
 
 #myInput {
