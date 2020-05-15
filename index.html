@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!-- for azure:  all these links must use https, not http -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>My First jQuery Mobile Application</title>
+
+  <link rel="stylesheet" type="text/css" href="index.css"/>
+  <link rel="stylesheet" type="text/css" href="https://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css"/>
+  <script src="https://code.jquery.com/jquery-1.8.2.min.js"> </script>
+  <script src="https://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+  <script src="main.js"></script>
+ </head>
+
+ <body>
+   
+<!-- Beginning of Home Page -->
+<div data-role="page" id="Home">
+
+   <div data-role="header" data-theme='c'> 
+      <h1 class="name_taskbar">To be changed </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert" id="buttonalert2" class="signout_btn">Sign-out</a>
+      <div data-role="navbar">
+            <ul>
+                  <li><a href="#Home" data-icon="home">Home Page</a></li>
+                  <li><a href="#International" data-icon="star">International Maps</a> </li>
+                  <li><a href="#United States" data-icon="star">United States Map</a> </li>
+                  <li><a href="#Personal" data-icon="edit">Personal Map</a> </li>
+            </ul>
+         </div><!-- /navbar -->
+   </div>
+
+   <div data-role="content" data-theme='c'>
+         <h1>Welcome back to Home!</h1>
+         <br>
+            <input type="search" id="searchbar" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+            <ul id="myUL">
+               <li><a href="#">United States</a></li>
+               <li><a href="#">Canada</a></li>
+               <li><a href="#">Mexico</a></li>
+               <li><a href="#">France</a></li>
+               <li><a href="#">United Kingdom</a></li>
+               <li><a href="#">Brazil</a></li>
+               <li><a href="#">Vietnam</a></li>
+               <li><a href="#">Congo</a></li>
+               <li><a href="#">China</a></li>
+            </ul>
+         <br>
+   </div>
+
+   <div data-role="footer" data-theme='c' style="text-align: center;">
+         Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+         <!-- <a href="#Info" data-role="button" data-icon="information" data-iconpos="notext"></a> -->
+   </div>
+
+</div>
+
+<!-- End of Home Page -->
+
+
+   <!-- International Page starts here -->
+<div data-role="page" id="International">
+
+   <div data-role="header" data-theme='c'> 
+      <h1 class="name_taskbar">To be changed </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert" id="buttonalert2" class="signout_btn">Sign-out</a>
+      <div data-role="navbar">
+            <ul>
+                  <li><a href="#Home" data-icon="home">Home Page</a></li>
+                  <li><a href="#International" data-icon="star">International Maps</a> </li>
+                  <li><a href="#United States" data-icon="star">United States Map</a> </li>
+                  <li><a href="#Personal" data-icon="edit">Personal Map</a> </li>
+            </ul>
+         </div><!-- /navbar -->
+   </div>
+
+   <div data-role="content" data-theme='c'>
+     <h1>Global Map</h1>
+      <p><img src="images/world-map-max.jpg" alt="US Map" height="450" width="800" class="center" ></p>
+      <br><br><hr>
+   </div>
+
+   <div data-role="footer" data-theme='c' style="text-align: center;">
+      Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+      <!-- <a href="#Info" data-role="button" data-icon="information" data-iconpos="notext"></a> -->
+
+   </div>
+</div>
+<!-- International Page ends here -->
+
+<!-- United States Page starts here -->
+<div data-role="page" id="United States">
+
+            <div data-role="header" data-theme='c'> 
+               <h1 class="name_taskbar">To be changed </h1>
+               <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+               <a href="#Sign-out" data-icon="alert" id="buttonalert2" class="signout_btn">Sign-out</a>
+               <div data-role="navbar">
+                     <ul>
+                           <li><a href="#Home" data-icon="home">Home Page</a></li>
+                           <li><a href="#International" data-icon="star">International Maps</a> </li>
+                           <li><a href="#United States" data-icon="star">United States Map</a> </li>
+                           <li><a href="#Personal" data-icon="edit">Personal Map</a> </li>
+                     </ul>
+                  </div><!-- /navbar -->
+            </div>
+    
+         
+            <div data-role="content" data-theme='c'>
+               <h1>United States Map</h1>
+               <div class="flex">
+                  <img src="images/usmap2.jpg" alt="US Map" height="450" width="800" class="center">
+               </div>
+               <br><br><hr>
+            </div>
+    
+            <div data-role="footer" data-theme='c' style="text-align: center;">
+               Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+               <!-- <a href="#Info" data-role="button" data-icon="information" data-iconpos="notext"></a> -->
+      
+            </div>
+    
+</div>
+
+<div data-role="page" id="Personal">
+
+   <div data-role="header" data-theme='c'> 
+      <h1 class="name_taskbar">To be changed </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert" id="buttonalert2" class="signout_btn">Sign-out</a>
+      <div data-role="navbar">
+            <ul>
+               <li><a href="#Home" data-icon="home">Home Page</a></li>
+               <li><a href="#International" data-icon="star">International Maps</a> </li>
+               <li><a href="#United States" data-icon="star">United States Map</a> </li>
+               <li><a href="#Personal" data-icon="edit">Personal Map</a> </li>
+            </ul>
+         </div><!-- /navbar -->
+   </div>
+
+   <div data-role="content" data-theme='c'>
+      <h1>Personal a Map a la carte</h1>
+      <img src="images/NotePic.jpeg" alt="Placeholder">
+      <h3>United States a new Map here</h3>
+      <br /><label>Title:  </label>
+         <input type="text" val="starting value" text="hello" id="oneTitle" />
+      <br /><label>Detail: </label>
+         <input type="text" val="starting value" text="hello" id="oneDetail" />
+      <br /><label>Priority:  </label>
+         <input type="text" val="starting value" text="hello" id="onePriority" />
+      <br />
+         <button>Click Here</button>
+   </div>
+
+   <div data-role="footer" data-theme='c' style="text-align: center;">
+      Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+      <!-- <a href="#Info" data-role="button" data-icon="information" data-iconpos="notext"></a> -->
+   </div>
+
+</div>
+
+
+<!-- // there are no user links to this page as it should only be displayed by a li event which  -->
+<!-- // has set the hidden field -->
+
+<div data-role="page" id="Details">
+
+            <div data-role="header" data-theme='c'> 
+               <h1 class="name_taskbar">To be changed </h1>
+            <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert" id="buttonalert2" class="signout_btn">Sign-out</a>
+               <div data-role="navbar">
+                     <ul>      
+                        <li><a href="#Home" data-icon="home">Home Page</a></li>
+                        <li><a href="#International" data-icon="star">International Maps</a> </li>
+                        <li><a href="#United States" data-icon="star">United States or Personal Map</a> </li>
+                        <li><a href="#Personal" data-icon="edit">United States or Personal Map</a> </li>
+                     </ul>
+                  </div><!-- /navbar -->
+            </div>
+    
+            <div data-role="content" data-theme='c'>
+               <h2>Here are the details for that Map</h2>
+               <div>
+                  <p id="IDparmHere" hidden>change1</p>  <!-- not visable,     a place to stash the Map title -->
+                      <!-- our li events write the value, and our Details pagebeforeInternational  reads it -->
+                  <p class="bold" > Here are the details</p>
+                  <p> <span class="bold"> Priority: </span> <span id="onePriority"> </span>  </p>
+                  <p><span class="bold"> Title: </span> <span id="oneTitle"> </span>  </p>
+                  <p><span class="bold"> Details: </span> <span id="oneDetail"> </span>  </p>
+               </div>
+               
+
+            </div>
+    
+            <div data-role="footer"  data-theme='c'>
+                <h1>Copyright &copy; THC Corporation 2020</h1>
+            </div>
+    
+</div>
+<!-- End of Details-->
+
+<!--Beginning of Info Page- hidden-->
+<!-- Start of Info Page -->
+<div data-role="page" id="Info" hidden>
+
+   <div data-role="header" data-theme='c'> 
+      <h1 class="name_taskbar">To be changed </h1>  <!--Change this name to user's name-->
+      <a href="#Sign-in" data-icon="power" class="signin_btn">Sign-in</a>   <!--This should disappear when the user is signed in-->
+      <div data-role="navbar">
+         <ul>
+
+            <li><a href="#Home" data-icon="home">Home Page</a></li>
+            <li><a href="#International" data-icon="star">International Maps</a> </li>
+            <li><a href="#United States" data-icon="star">United States Map</a> </li>
+            <li><a href="#Personal" data-icon="edit">Personal Map</a> </li>
+         </ul>
+      </div><!-- /navbar -->
+   </div>
+
+   <div data-role="content" data-theme='c'>
+         <h2>Welcome back to Info!</h2>
+         <p>Creator: Vinh The Nguyen</p>
+         <p>Time: Spring Quarter 2020 - the Pandemic</p>
+         <p>International Map Final Project</p>
+         <p> My intention is to create a personal map application that anyone could just log-in and have a personalized map-related experience. Totally free, personally tailored and do what you expect it to. </p>
+      
+         <!-- <p>Hi,
+ 
+          I have an idea of creating an interactable International Map, where you can get information about different countries in the World: ethnicity, language, race, population, etc.
+ 
+       <p>Page 0 would be the Log-in Page / Welcome Page to returning users with their unique username & password combination, or first time user can create a new account that will be posted on the cloud. I'll have to figure out to make my website secured from hackers!</p>
+ 
+       <p>Page 1 would be the Home Page, with personalized features that you can interact with, or navigate to other pages. I was thinking of having a search bar, somewhat like Google's search bar but for different countries. If anyone has ideas for this, please throw it at me.</p>
+ 
+       <p>Page 2 is the International Map. Here, user can hover the countries for a general overview, or click on it to get a comprehensive sense of the countries.  As a life-long travel enthusiast, this will be my chance of learning about different countries as I work on this. I could also include pictures, videos, a short link, or whatnot about those countries as well.</p>
+ 
+       <p>Page 3 is the US Map, with 50 states all drawn out. The concept is basically the same as the International Map, but it's more local since a lot of people here has never travelled outside of the US. I could have a button that changes the outline of the map, per se maps of tornados, winds, heat maps, NBA teams of different states. The possibilities are endless.</p>
+ 
+       <p>Page 4 is my favorite since it's a combination of the previous 2 pages. Here, you will be able to pinpoint the locations that you have traveled to as your 'unique travel collection'. I will have a button that switches between Internation and US Map, so people could personalize to their liking. I could also have tabs like "Favorites", "Country of Origin", "To-Travel List", or personal notes that you can add for future use.</p>
+ 
+       <p>Page 5 could be a mini-game related to the maps. Some additional brainstorming will be needed for this part, and based on the time frame, I might not get to this.</p>
+        -->
+       <h4>Hope you find it helpful in the time of the pandemic. Life's a trip!</h4>
+   </div>
+
+   <div data-role="footer" data-theme='c' style="text-align: center;">
+      Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+      <!-- <a href="#Info" data-role="button" data-icon="information" data-iconpos="notext"></a> -->
+
+   </div>
+</div>
+<!--End of Info Page  -->
+
+<!-- Sign=in -->
+<div data-role="page" id="Sign-in">
+   <div data-role="header" data-theme='c'> 
+      <h1 class="name_taskbar">To be changed </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert" id="buttonalert2" class="signout_btn">Sign-out</a>
+      
+      
+      <div data-role="navbar">
+         <ul>
+            <li><a href="#Home" data-icon="home">Home Page</a></li>
+            <li><a href="#International" data-icon="star">International Maps</a> </li>
+            <li><a href="#United States" data-icon="star">United States Map</a> </li>
+            <li><a href="#Personal" data-icon="edit">Personal Map</a> </li>
+         </ul>
+      </div><!-- /navbar -->
+   </div>
+
+   <div data-role="content" data-theme='c'>
+      <div>
+         <h1>My International Map App</h1>
+         <img src="./images/scobot2.png" alt="Virtual Smiley Face"  class="center">
+      </div>
+
+      <div >
+         <br /><label>Full Name:</label>
+         <input type="text" val="starting value" text="hello" id="fullname" /> 
+         <br />
+
+         <br /><label>Username: </label>
+         <input type="text" val="starting value" text="hello" id="username" /> 
+         <br />
+
+
+         <!-- Password field -->
+         <br>Password: <input type="password" value="" id="password"><br>
+         
+         <input type="checkbox" id="toggle" >
+         <label for="toggle"><span id="toggleText">Show Password</span></label>
+     
+               
+
+            <!-- Program this to do a page-change -->
+         <br />
+         <button type="button" id="submit1">Submit</button> <br>
+         <p id="result"></p>
+      </div>
+   </div>
+
+   <div data-role="footer" data-theme='c' style="text-align: center;">
+      Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+      <!-- <a href="#Info" data-role="button" data-icon="information" data-iconpos="notext"></a> -->
+
+   </div>
+
+</div>
+<!--End of Sign-in-->
+
+<!-- Sign-out -->
+<div data-role="page" id="Sign-out">
+   <div data-role="header" data-theme='c'> 
+      <h1 class="name_taskbar">To be changed </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert" id="buttonalert2" class="signout_btn">Sign-out</a>
+      
+      
+      <div data-role="navbar">
+         <ul>
+            <li><a href="#Home" data-icon="home">Home Page</a></li>
+            <li><a href="#International" data-icon="star">International Maps</a> </li>
+            <li><a href="#United States" data-icon="star">United States Map</a> </li>
+            <li><a href="#Personal" data-icon="edit">Personal Map</a> </li>
+         </ul>
+      </div><!-- /navbar -->
+   </div>
+
+   <div data-role="content" data-theme='c'>
+      <div>
+         <h1>My International Map App</h1>
+         <!-- <img src="./images/scobot2.png" alt="Virtual Smiley Face"  class="center"> -->
+      </div>
+         <p> You have successfully signed out</p>
+      
+      </div>
+   </div>
+
+   <div data-role="footer" data-theme='c' style="text-align: center;">
+      Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+      <!-- <a href="#Info" data-role="button" data-icon="information" data-iconpos="notext"></a> -->
+
+   </div>
+
+</div>
+<!--End of Sign-out-->
+
+
+
+
+<script>
+   $(function(){
+
+      // $("Sign-in").show();
+      // $("#Home").show();
+      // $("#International").hide();
+      // $("United States").hide();
+      // $("#Personal").hide();
+   })
+</script>
+ </body>
+ </html> 
