@@ -2,32 +2,70 @@
 
 // Now comes the code that must wait to run until the document is fully loaded
 document.addEventListener("DOMContentLoaded", function (event) {
+
+    //login authentication
+    $( "#submit1" ).click( function(){
+      
+      //alert($("#fullname").val()+", you failed again"); 
+      if ($("#username").val() === "username" && $("#password").val() === "password" ) {
+        let fullname = $("#fullname").val();
+        $("#result").html( "Welcome to the Club!"); 
+        $("#fullname").val("");
+        $("#username").val("");
+        $("#password").val("");
+        $(".name_taskbar").html(fullname + "'s Map Application");
+        $('.signin_btn').hide();
+        
+      } else {
+        $("#result").html("Unsuccessful Log-in. Try again!");
+        $("#fullname").val("");
+        $("#username").val("");
+        $("#password").val("");
+        
+      }
+
+    })
+
+    //Show Hide password
+    $("#toggle").click(function(){
+      // Check the checkbox state
+      if($(this).is(':checked')){
+        console.log($("#password").prop("type"));
+        $("#password").prop("type","text");
+        
+      }else{
+        console.log($("#password").prop("type"));
+        $("#password").prop("type","password");
+      }
+     
+     });
     
-    document.getElementById("button1").addEventListener("click", login);
-    
+});
+
+
+
+function myFunction() {
+
+    // Declare variables
+    let input, filter, ul, li, a, i, txtValue, countries, states;
+    input = document.getElementById('searchbar');
+    filter = input.value.toLowerCase();
+
+    countries = ["America","Turkey","Russia"];
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('li');
+    //inputting the elements from list to ul to li
   
-});  
 
 
-let login = function(){
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
-
-    if ((username =="username") && (password == "password")){
-     document.getElementById("result").innerHTML = "Successfully logged in!";
-     document.getElementById("username").value = "";
-     document.getElementById("password").value="";
-    
-
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toLowerCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
     }
-    else {
-     document.getElementById("result").innerHTML = "Username and Password pair did not match! Try again!";
-     document.getElementById("username").value = "";
-     document.getElementById("password").value="";
-    
-    }
-};
-
-let login_reject = function(){
-    alert("You have to log in first");
 }
