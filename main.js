@@ -9,12 +9,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
       //alert($("#fullname").val()+", you failed again"); 
       if ($("#username").val() === "username" && $("#password").val() === "password" ) {
         let fullname = $("#fullname").val();
+        if (fullname === "")
+        {
+          $(".name_taskbar").html("My International Map Application");
+        }else {
+          $(".name_taskbar").html(fullname + "'s Map Application");
+        }
+
         $("#result").html( "Welcome to the Club!"); 
         $("#fullname").val("");
         $("#username").val("");
         $("#password").val("");
-        $(".name_taskbar").html(fullname + "'s Map Application");
-        $('.signin_btn').hide();
+        
+        //one of these will work
+        $(".signin_btn").css("visibility","hidden");
+         $(".signout_btn").css("visibility","visible");
         
       } else {
         $("#result").html("Unsuccessful Log-in. Try again!");
@@ -27,18 +36,29 @@ document.addEventListener("DOMContentLoaded", function (event) {
     })
 
     //Show Hide password
-    $("#toggle").click(function(){
-      // Check the checkbox state
-      if($(this).is(':checked')){
-        console.log($("#password").prop("type"));
+    $('#toggle').click(function(){
+      if ($(this).is(':checked')){
         $("#password").prop("type","text");
-        
-      }else{
-        console.log($("#password").prop("type"));
+        $('#toggleText').html("Hide Password");
+
+      } else {
         $("#password").prop("type","password");
+        $('#toggleText').html("Show Password");
+
       }
-     
-     });
+      console.log("you have been rickrolled");
+    })
+
+
+         //logout authentication
+    $( ".signout_btn" ).click( function(){
+      $(".signin_btn").css("visibility","visible");
+      $(".signout_btn").css("visibility","hidden");
+      $(".name_taskbar").html("My International Map Application");
+      console.log("logged out successfully");
+
+    })
+
     
 });
 
@@ -69,3 +89,16 @@ function myFunction() {
       }
     }
 }
+
+(function($) {
+  $.fn.invisible = function() {
+      return this.each(function() {
+          $(this).css("visibility", "hidden");
+      });
+  };
+  $.fn.visible = function() {
+      return this.each(function() {
+          $(this).css("visibility", "visible");
+      });
+  };
+}(jQuery));
