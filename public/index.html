@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!-- for azure:  all these links must use https, not http -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>My First jQuery Mobile Application</title>  
+
+     <!-- JQuery CSS UI & Themeroller -->
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+     <link rel="stylesheet" type="text/css" href="https://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css"/>
+     
+     <!-- JQuery Core -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.js" 
+     integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+     crossorigin="anonymous"></script>  
+   
+     <!-- JQuery UI -->
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+      <script src="https://code.jquery.com/jquery-1.8.2.min.js"> </script>
+      <script src="https://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+      <!-- BootStrap for icons -->
+      <script src="https://kit.fontawesome.com/89e34bddfa.js" crossorigin="anonymous"></script>
+   
+      <!-- Personal External CSS & JS -->
+     <script type="module" src="javascripts/main.js"></script>
+     <script type="javascripts" src="javascripts/experimental.js"></script>
+     <link rel="stylesheet" type="text/css" href="stylesheets/index.css"/>
+     <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+ </head>
+
+ <body>
+
+    <!-- Sign=in -->
+<div data-role="page" id="Sign-in">
+    <div data-role="header" data-theme='a'> 
+       <h1 class="name_taskbar">My International Map App </h1>
+       <a href="#Sign-in" data-icon="alert"  class="signin_btn">Sign-in</a>
+       <a href="#Sign-out" data-icon="alert"   class="signout_btn">Sign-out</a>
+       
+       <div data-role="navbar" id="Signin_navbar">
+          <ul>
+             <li><a href="#Home" data-icon="home">Home Page</a></li>
+             <li><a href="#MapCentral" data-icon="star" >Map Central</a> </li>
+             <li><a href="#Personal" data-icon="star" >Journal</a> </li>
+          </ul>
+       </div><!-- navbar -->
+    </div>
+ 
+    <div data-role="content" data-theme='a'>
+       <div>
+          <h1>My International Map App</h1>
+          <img src="images/scobot2.png" alt="Virtual Smiley Face"  class="center">
+       </div>
+ 
+       <div >
+          <br /><label>Full Name:</label>
+          <input type="text" val="starting value" text="hello" id="fullname" /> 
+          <br />
+ 
+          <br /><label>Username: </label>
+          <input type="text" val="starting value" text="hello" id="username" /> 
+          <br />
+ 
+ 
+          <!-- Password field -->
+          <br>Password: <input type="password" value="" id="password"><br>
+          
+          <input type="checkbox" id="toggle">
+          <label for="toggle"><span id="toggleText">Show Password</span></label>
+
+          <span><a href="#forgotPassword">Forgot Password?</a></span><br>
+          <span><a href="#register">Register?</a></span>
+
+             <!-- Program this to do a page-change -->
+          <br />
+          <button type="button" id="submit1">Submit</button> <br>
+          <p id="result"></p>
+       </div>
+    </div>
+ 
+    <div data-role="footer" data-theme='a' style="text-align: center;">
+       Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+       <!-- <a href="#Info" data-role="button" data-icon="information" data-iconpos="notext"></a> -->
+ 
+    </div>
+ 
+ </div>
+ <!--End of Sign-in-->
+   
+<!-- Beginning of Home Page -->
+<div data-role="page" id="Home">
+
+   <div data-role="header" data-theme='a'> 
+      <h1 class="name_taskbar">My International Map App </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert"   class="signout_btn">Sign-out</a>
+      <div data-role="navbar" >
+            <ul class ="navbarUl">
+               <li><a href="#Home" data-icon="home">Home Page</a></li>
+               <li><a href="#MapCentral" data-icon="star">Map Central</a> </li>
+               <li><a href="#Personal" data-icon="star">Journal</a> </li>
+            </ul>
+         </div><!-- /navbar -->
+   </div>
+
+   <div data-role="content" data-theme='a' id="HomeWrapper">
+         <h1>Welcome back to Home!</h1>
+         
+         <!-- Animated Sprite called Goofy
+         <object data="html/goofy_animated.html" id="goofy"> 
+            Your browser doesn’t support the object tag. 
+        </object>  -->
+
+         <!-- Fully functioning searchbar with 195 countries -->
+         <input type="search" id="searchbar" placeholder="Search for any countries or cities names.." title="Type in a name" >
+
+            <ul id="myUL">
+                <!-- To be filled by JS   -->
+            </ul>
+
+         <br>
+   </div>
+
+   <div data-role="footer" data-theme='a' style="text-align: center;">
+         Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+   </div>
+
+</div>
+<!-- End of Home Page -->
+
+<!-- Beginning of Map Central Page -->
+<div data-role="page" id="MapCentral">
+
+   <div data-role="header" data-theme='a'> 
+      <h1 class="name_taskbar">My International Map App </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert"   class="signout_btn">Sign-out</a>
+      <div data-role="navbar" >
+            <ul class ="navbarUl">
+               <li><a href="#Home" data-icon="home">Home Page</a></li>
+               <li><a href="#MapCentral" data-icon="star">Map Central</a> </li>
+               <li><a href="#Personal" data-icon="star">Journal</a> </li>
+
+            </ul>
+      </div><!-- /navbar -->
+   </div>
+
+   <div data-role="content" data-theme='a'>
+         <br>
+         <h1>Where to go next?</h1>
+         
+
+            <!-- <span class="dot" ></span>  <span class="dot" ></span> <span class="dot" ></span> <span class="dot" ></span><span class="dot" ></span> <span class="dot" ></span> <span class="dot" ></span> <span class="dot" ></span> <span class="dot" ></span> <span class="dot" ></span> <span class="dot" ></span> <span class="dot" ></span> -->
+             <!--Could try to use React to simply / clean up this mess (fully working at the momment though)  -->
+               <a href="#Home" data-icon="home">
+                  <div class="quote-wrapper">
+                  <blockquote class="text" cite="http://www.inspireux.com/category/quotes/jesse-james-garrett/">
+                  <p>Home</p>
+                  <img src="images/shiba.jpg" alt="Solar System" class="circImg">
+                  <footer>Nobody</footer>
+                  </blockquote>
+               </div>
+               </a> 
+               <a href="#International" data-icon="star">
+                  <div class="quote-wrapper">
+                  <blockquote class="text" cite="http://www.inspireux.com/category/quotes/jesse-james-garrett/">
+                     <p style="visibility: hidden">.     </p>
+                     <img src="svg/World_map_-_low_resolution.svg" alt="Solar System" class="circImg">
+                     <footer>International</footer>
+                  </blockquote>
+               </div>
+               </a> 
+               <a href="#UnitedStates" data-icon="star">
+                  <div class="quote-wrapper">
+                  <blockquote class="text" cite="http://www.inspireux.com/category/quotes/jesse-james-garrett/">
+                     <p style="visibility: hidden">.     </p>
+                     <img src="svg/1024px-USA_Flag_Map.svg.png" alt="Solar System" class="circImg">
+                     <footer>UnitedStates</footer>
+                  </blockquote>
+               </div>
+               </a> 
+               <a href="#ContinentalOcean" >
+               <div class="quote-wrapper">
+                  <blockquote class="text" cite="http://www.inspireux.com/category/quotes/jesse-james-garrett/">
+                     <p style="visibility: hidden">.     </p>
+                     <img src="svg/lkmap.svg" alt="Solar System" class="circImg">
+                     <footer>ContinentalOcean</footer>
+                  </blockquote>
+               </div></a> 
+               <a href="#Cities" >
+                  <div class="quote-wrapper">
+                  <blockquote class="text" cite="http://www.inspireux.com/category/quotes/jesse-james-garrett/">
+                     <p style="visibility: hidden">.     </p>
+                     <img src="images/kissclipart-skylinecity-svg-clipart-clip-art-c227b62879766ee6.png" alt="Solar System" class="circImg">
+                     <footer>Cities</footer>
+                  </blockquote>
+               </div>
+               </a> 
+               <a href="#Population">
+                  <div class="quote-wrapper">
+                  <blockquote class="text" cite="http://www.inspireux.com/category/quotes/jesse-james-garrett/">
+                     <p style="visibility: hidden">.     </p>
+                     <img src="images/stick-figure-group-png-8.png" alt="Solar System" class="circImg">
+                     <footer>Population</footer>
+                  </blockquote>
+               </div>
+               </a> 
+               <a href="#BeyondEarth">
+                  <div class="quote-wrapper">
+                  <blockquote class="text" cite="http://www.inspireux.com/category/quotes/jesse-james-garrett/">
+                  <p style="visibility: hidden"> .     </p>
+                  <img src="images/solar_system.svg" alt="Solar System" class="circImg">
+                  <footer>BeyondEarth</footer>
+                  </blockquote>
+               </div>
+               </a> 
+               <a href="#Religions">
+                  <div class="quote-wrapper">
+                  <blockquote class="text" cite="http://www.inspireux.com/category/quotes/jesse-james-garrett/">
+                     <p style="visibility: hidden"> .     </p>
+                     <img src="images/laughing_buddha.png" alt="Solar System" class="circImg">
+                     <footer>Religions</footer>
+                  </blockquote>
+               </div>
+               </a> 
+         <br><br><br>
+   </div>
+
+   <div data-role="footer" data-theme='a' style="text-align: center;">
+         Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+   </div>
+
+</div>
+<!-- End of Map Central Page -->
+
+<!-- International Page starts here -->
+<div data-role="page" id="International">
+
+   <div data-role="header" data-theme='a'> 
+      <h1 class="name_taskbar">My International Map App </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert"  class="signout_btn">Sign-out</a>
+      <div data-role="navbar" >
+            <ul>
+               <li><a href="#Home" data-icon="home">Home Page</a></li>
+               <li><a href="#MapCentral" data-icon="star">Map Central</a> </li>
+               <li><a href="#Personal" data-icon="star">Journal</a> </li>
+            </ul>
+         </div><!-- /navbar -->
+   </div>
+
+   <div data-role="content" data-theme='a' >
+     <h1>Global Map</h1>
+      
+        <div class="mapdiv">
+
+            <!-- INTERNATIONAL MAP SVG -->
+            <object data="html/international_svg.html" id="warning"> 
+                Your browser doesn’t support the object tag. 
+            </object> 
+           
+            <!-- Color wheel for Map -->
+            <div id="picker"></div>
+
+        </div>
+   </div>
+
+   <div data-role="footer" data-theme='a' style="text-align: center;">
+      Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+
+   </div>
+</div>
+<!-- International Page ends here -->
+
+
+<!-- United States Page starts here -->
+<div data-role="page" id="UnitedStates">
+
+            <div data-role="header" data-theme='a'> 
+               <h1 class="name_taskbar">My International Map App </h1>
+               <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+               <a href="#Sign-out" data-icon="alert"   class="signout_btn">Sign-out</a>
+               <div data-role="navbar">
+                     <ul>
+                        <li><a href="#Home" data-icon="home">Home Page</a></li>
+                        <li><a href="#MapCentral" data-icon="star">Map Central</a> </li>
+                        <li><a href="#Personal" data-icon="star">Journal</a> </li>
+                     </ul>
+                  </div><!-- /navbar -->
+            </div>
+    
+         
+            <div data-role="content" data-theme='a'>
+               <h1>United States Map</h1>
+               <div class="divmap">
+                  <!-- UNITED STATES SVG -->
+                  <object data="html/us_svg.html" id="warning2"> 
+                    Your browser doesn’t support the object tag. 
+                  </object> 
+
+                  <!-- Color wheel for Map -->
+                  <div id="picker2"></div>
+               
+                </div>
+               
+            </div>
+    
+            <div data-role="footer" data-theme='a' style="text-align: center;">
+               Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+               <!-- <a href="#Info" data-role="button" data-icon="information" data-iconpos="notext"></a> -->
+      
+            </div>
+    
+</div>
+
+<!-- ContinentalOcean Page starts here -->
+<div data-role="page" id="ContinentalOcean">
+
+   <div data-role="header" data-theme='a'> 
+      <h1 class="name_taskbar">My International Map App </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert"  class="signout_btn">Sign-out</a>
+      <div data-role="navbar" >
+            <ul>
+               <li><a href="#Home" data-icon="home">Home Page</a></li>
+               <li><a href="#MapCentral" data-icon="star">Map Central</a> </li>
+               <li><a href="#Personal" data-icon="star">Journal</a> </li>
+            </ul>
+         </div><!-- /navbar -->
+   </div>
+
+   <div data-role="content" data-theme='a' >
+      <h1>Continents / Oceans Map</h1>
+      
+      <img src="images/continents.jpg" alt="Continents / Oceans">
+        <!--<div class="mapdiv">
+
+            INTERNATIONAL MAP SVG
+            <object data="html/international_svg.html" id="warning"> 
+                Your browser doesn’t support the object tag. 
+            </object>  
+           
+            Color wheel for Map
+           <div id="picker"></div>
+
+        </div> -->
+   </div>
+
+   <div data-role="footer" data-theme='a' style="text-align: center;">
+      Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+
+   </div>
+</div>
+<!-- ContinentalOcean Page ends here -->
+
+<!-- Cities Page starts here -->
+<div data-role="page" id="Cities">
+
+   <div data-role="header" data-theme='a'> 
+      <h1 class="name_taskbar">My International Map App </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert"  class="signout_btn">Sign-out</a>
+      <div data-role="navbar">
+            <ul>
+               <li><a href="#Home" data-icon="home">Home Page</a></li>
+               <li><a href="#MapCentral" data-icon="star">Map Central</a> </li>
+               <li><a href="#Personal" data-icon="star">Journal</a> </li>
+            </ul>
+         </div><!-- /navbar -->
+   </div>
+
+   <div data-role="content" data-theme='a' >
+      <h1>Cities Map</h1>
+      
+      <img src="images/maps-of-medieval-cities-bologna.jpg" alt="Medival cities?" width="1200" height="700">
+        <!--<div class="mapdiv">
+
+            INTERNATIONAL MAP SVG
+            <object data="html/international_svg.html" id="warning"> 
+                Your browser doesn’t support the object tag. 
+            </object>  
+           
+            Color wheel for Map
+           <div id="picker"></div>
+
+        </div> -->
+   </div>
+
+   <div data-role="footer" data-theme='a' style="text-align: center;">
+      Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+
+   </div>
+</div>
+<!-- Cities Page ends here -->
+
+<!-- Population Page starts here -->
+<div data-role="page" id="Population">
+
+   <div data-role="header" data-theme='a'> 
+      <h1 class="name_taskbar">My International Map App </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert"  class="signout_btn">Sign-out</a>
+      <div data-role="navbar">
+            <ul>
+               <li><a href="#Home" data-icon="home">Home Page</a></li>
+               <li><a href="#MapCentral" data-icon="star">Map Central</a> </li>
+               <li><a href="#Personal" data-icon="star">Journal</a> </li>
+            </ul>
+         </div><!-- /navbar -->
+   </div>
+
+   <div data-role="content" data-theme='a' >
+      <h1>Population Map</h1>
+
+      <img src="images/population-growth-rate-LowRes-2020.png" alt="2020population">
+      
+        <!--<div class="mapdiv">
+
+            INTERNATIONAL MAP SVG
+            <object data="html/international_svg.html" id="warning"> 
+                Your browser doesn’t support the object tag. 
+            </object>  
+           
+            Color wheel for Map
+           <div id="picker"></div>
+
+        </div> -->
+   </div>
+
+   <div data-role="footer" data-theme='a' style="text-align: center;">
+      Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+
+   </div>
+</div>
+<!-- Population Page ends here -->
+
+<!-- BeyondEarth Page starts here -->
+<div data-role="page" id="BeyondEarth">
+
+   <div data-role="header" data-theme='a'> 
+      <h1 class="name_taskbar">My International Map App </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert"  class="signout_btn">Sign-out</a>
+      <div data-role="navbar">
+            <ul>
+               <li><a href="#Home" data-icon="home">Home Page</a></li>
+               <li><a href="#MapCentral" data-icon="star">Map Central</a> </li>
+               <li><a href="#Personal" data-icon="star">Journal</a> </li>
+            </ul>
+         </div><!-- /navbar -->
+   </div>
+
+   <div data-role="content" data-theme='a' >
+      <h1>BeyondEarth Map</h1>
+      
+        <div class="solar">
+
+            <!-- SOLAR MAP SVG -->
+            <object data="html/solar.html" id="solarBitch"> 
+                Your browser doesn’t support the object tag. 
+            </object>  
+           
+
+        </div>
+   </div>
+
+   <div data-role="footer" data-theme='a' style="text-align: center;">
+      Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+
+   </div>
+</div>
+<!-- BeyondEarth Page ends here -->
+
+<!-- Religions Page starts here -->
+<div data-role="page" id="Religions">
+
+   <div data-role="header" data-theme='a'> 
+      <h1 class="name_taskbar">My International Map App </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert"  class="signout_btn">Sign-out</a>
+      <div data-role="navbar">
+            <ul>
+               <li><a href="#Home" data-icon="home">Home Page</a></li>
+               <li><a href="#MapCentral" data-icon="star">Map Central</a> </li>
+               <li><a href="#Personal" data-icon="star">Journal</a> </li>
+            </ul>
+         </div><!-- /navbar -->
+   </div>
+
+   <div data-role="content" data-theme='a' >
+      <h1>Religions Map</h1>
+      
+      <img src="images/Religions_world_map.gif" alt="religionmap">
+        <!--<div class="mapdiv">
+
+            INTERNATIONAL MAP SVG
+            <object data="html/international_svg.html" id="warning"> 
+                Your browser doesn’t support the object tag. 
+            </object>  
+           
+            Color wheel for Map
+           <div id="picker"></div>
+
+        </div> -->
+   </div>
+
+   <div data-role="footer" data-theme='a' style="text-align: center;">
+      Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+
+   </div>
+</div>
+<!-- Religions Page ends here -->
+
+<div data-role="page" id="Personal">
+
+   <div data-role="header" data-theme='a'> 
+      <h1 class="name_taskbar">My International Map App </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert"   class="signout_btn">Sign-out</a>
+      <div data-role="navbar">
+            <ul>
+               <li><a href="#Home" data-icon="home">Home Page</a></li>
+               <li><a href="#MapCentral" data-icon="star">Map Central</a> </li>
+               <li><a href="#Personal" data-icon="star">Journal</a> </li>
+            </ul>
+         </div><!-- /navbar -->
+   </div>
+
+   <div data-role="content" data-theme='a' id="personalDiv" class="draggable">
+      <img src="images/scobot3.jpg" alt="funny" width="500" height="300"> 
+
+     <!-- <embed src="html/experimental.html" width="500" height="300">  -->
+      <h1 style="color:  #FF6600">Bucket List </h1>
+         <ul id="sortability">
+            <li>Malibu, CA</li>
+            <li>Paris, France</li>
+            <li>Tibet Temple</li>
+            <li>Sky Diving</li>
+         </ul>
+       
+       <label for="bucketListItem">Want to add a new BucketList Item?</label><br>
+       <input type="text" for="bucketListItem" id="bucketListItem">
+       
+     
+       <input type="button" for="bucketListBtn" id="bucketListBtn" value="Submit">
+       <label for="bucketListBtn"></label>
+     
+   </div>
+
+   <div data-role="footer" data-theme='a' style="text-align: center;">
+      Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+      <!-- <a href="#Info" data-role="button" data-icon="information" data-iconpos="notext"></a> -->
+   </div>
+
+</div>
+
+
+<!-- // there are no user links to this page as it should only be displayed by a li event which  -->
+<!-- // has set the hidden field -->
+
+<div data-role="page" id="Details">
+
+            <div data-role="header" data-theme='a'> 
+               <h1 class="name_taskbar">My International Map App </h1>
+                  <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+                  <a href="#Sign-out" data-icon="alert"   class="signout_btn">Sign-out</a>
+               <div data-role="navbar">
+                     <ul>      
+                        <li><a href="#Home" data-icon="home">Home Page</a></li>
+                        <li><a href="#International" data-icon="star">International Maps</a> </li>
+                        <li><a href="#UnitedStates" data-icon="star">United States or Personal Map</a> </li>
+                        <li><a href="#Personal" >United States or Personal Map</a> </li>
+                     </ul>
+                  </div><!-- /navbar -->
+            </div>
+    
+            <div data-role="content" data-theme='a'>
+               <h2>Here are the details for that Map</h2>
+               <div>
+                  <p id="IDparmHere" hidden>change1</p>  <!-- not visable,     a place to stash the Map title -->
+                      <!-- our li events write the value, and our Details pagebeforeInternational  reads it -->
+                  <p class="bold" > Here are the details</p>
+                  <p> <span class="bold"> Priority: </span> <span id="onePriority"> </span>  </p>
+                  <p><span class="bold"> Title: </span> <span id="oneTitle"> </span>  </p>
+                  <p><span class="bold"> Details: </span> <span id="oneDetail"> </span>  </p>
+               </div>
+               
+
+            </div>
+    
+            <div data-role="footer"  data-theme='a'>
+                <h1>Copyright &copy; THC Corporation 2020</h1>
+            </div>
+    
+</div>
+<!-- End of Details-->
+
+<!--Beginning of Info Page- hidden-->
+<!-- Start of Info Page -->
+<div data-role="page" id="Info" hidden>
+
+   <div data-role="header" data-theme='a'> 
+      <h1 class="name_taskbar">My International Map App </h1>  <!--Change this name to user's name-->
+      <a href="#Sign-in" data-icon="power" class="signin_btn">Sign-in</a>   <!--This should disappear when the user is signed in-->
+      <div data-role="navbar" >
+         <ul>
+            <li><a href="#Home" data-icon="home">Home Page</a></li>
+            <li><a href="#MapCentral" data-icon="star">Map Central</a> </li>
+            <li><a href="#Personal" data-icon="star">Journal</a> </li>
+         </ul>
+      </div><!-- /navbar -->
+   </div>
+
+   <div data-role="content" data-theme='a'>
+         <h2>Welcome back to Info!</h2>
+         <p>Creator: Vinh The Nguyen</p>
+         <p>Time: Spring Quarter 2020 - the Pandemic</p>
+         <p>ATLAS ULTIMATE Project</p>
+         <p> My intention is to create a personal map application that anyone could just log-in and have a personalized map-related experience. Totally free, personally tailored and do what you expect it to. </p>
+      
+         <!-- <p>Hi,
+ 
+          I have an idea of creating an interactable International Map, where you can get information about different countries in the World: ethnicity, language, race, population, etc.
+ 
+       <p>Page 0 would be the Log-in Page / Welcome Page to returning users with their unique username & password combination, or first time user can create a new account that will be posted on the cloud. I'll have to figure out to make my website secured from hackers!</p>
+ 
+       <p>Page 1 would be the Home Page, with personalized features that you can interact with, or navigate to other pages. I was thinking of having a search bar, somewhat like Google's search bar but for different countries. If anyone has ideas for this, please throw it at me.</p>
+ 
+       <p>Page 2 is the International Map. Here, user can hover the countries for a general overview, or click on it to get a comprehensive sense of the countries.  As a life-long travel enthusiast, this will be my chance of learning about different countries as I work on this. I could also include pictures, videos, a short link, or whatnot about those countries as well.</p>
+ 
+       <p>Page 3 is the US Map, with 50 states all drawn out. The concept is basically the same as the International Map, but it's more local since a lot of people here has never travelled outside of the US. I could have a button that changes the outline of the map, per se maps of tornados, winds, heat maps, NBA teams of different states. The possibilities are endless.</p>
+ 
+       <p>Page 4 is my favorite since it's a combination of the previous 2 pages. Here, you will be able to pinpoint the locations that you have traveled to as your 'unique travel collection'. I will have a button that switches between Internation and US Map, so people could personalize to their liking. I could also have tabs like "Favorites", "Country of Origin", "To-Travel List", or personal notes that you can add for future use.</p>
+ 
+       <p>Page 5 could be a mini-game related to the maps. Some additional brainstorming will be needed for this part, and based on the time frame, I might not get to this.</p>
+        -->
+       <h4>Hope you find it helpful in the time of the pandemic. Life's a trip!</h4>
+   </div>
+
+   <div data-role="footer" data-theme='a' style="text-align: center;">
+      Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+      <!-- <a href="#Info" data-role="button" data-icon="information" data-iconpos="notext"></a> -->
+
+   </div>
+</div>
+<!--End of Info Page  -->
+
+<!-- Sign-out -->
+<div data-role="page" id="Sign-out">
+   <div data-role="header" data-theme='a'> 
+      <h1 class="name_taskbar">My International Map App </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert"   class="signout_btn">Sign-out</a>
+
+      <div data-role="navbar" id="Signout_navbar">
+         <ul>
+            <li><a href="#Home" data-icon="home">Home Page</a></li>
+            <li><a href="#MapCentral" data-icon="star">Map Central</a> </li>
+            <li><a href="#Personal" data-icon="star">Journal</a> </li>
+         </ul>
+      </div>
+   </div>
+
+   <div data-role="content" data-theme='a'>
+      <div>
+         <h1>My International Map App</h1>
+         <p> You have successfully signed out</p>
+      
+      </div>
+   </div>
+
+   <div data-role="footer" data-theme='a' style="text-align: center;">
+      Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+
+   </div>
+
+</div>
+<!--End of Sign-out-->
+
+<!-- Register Page -->
+<div data-role="page" id="register">
+   <div data-role="header" data-theme='a'> 
+      <h1 class="name_taskbar">My International Map App </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert"   class="signout_btn">Sign-out</a>
+      
+      
+      <div data-role="navbar" id="register_navbar">
+         <ul>
+            <li><a href="#Home" data-icon="home">Home Page</a></li>
+            <li><a href="#MapCentral" data-icon="star">Map Central</a> </li>
+            <li><a href="#Personal" data-icon="star">Journal</a> </li>
+         </ul>
+      </div>
+   </div>
+
+   <div data-role="content" data-theme='a'>
+      <div>
+         <!-- <h1>My International Map App</h1> -->
+         <h1> Register</h1>
+
+         <form>
+            <label for="fullnameCreation">Full Name: </label>
+            <input type="text" for="fullnameCreation" id="fullnameCreation" placeholder="Severus Snape"/>
+
+            <label for="emailCreation">Enter email: </label>
+            <input type="text" for="emailCreation" id="emailCreation" placeholder="ssnape@hogwart.edu" />
+            
+            <label for="usernameCreation">Username: <i class="fas fa-forward"></i></label>
+            <input type="text" for="usernameCreation" id="usernameCreation" placeholder="ssnape123" />
+
+            <label for="passwordCreation">Password: <i class="fab fa-accessible-icon"></i></label>
+            <input type="password" for="passwordCreation"id="passwordCreation"  />
+
+            <label for="passwordCreation_check">Re-type Password:</label>
+            <input type="password" for="password_check" id="password_check" />
+
+
+            <p>Please answers these questions to finish up your application</p>
+            <p>It's only so that we enhance the website & can better serve you </p>
+            <p>You could always go back and fill these out later</p>
+            <!-- Insert quick survey, including their hometown, how they found out about website -->
+            <!-- favorite countries / cities been to , places/things on bucketlist -->
+            <div id="myInput"><a href="#Home" data-icon="info" data-iconpos="notext"></a>Hello Input..</div>
+            <ul id="myUL">
+               <li>  Hello World</li>
+               <li><a>Hello World</a></li>
+               <li><a>Hello World</a></li>
+            </ul>
+            <input type="button" class="ui-button">
+            <input type="submit" id="register_submit" value="Create account"/>
+
+         </form>
+
+
+      
+      </div>
+   </div>
+
+   <div data-role="footer" data-theme='a' style="text-align: center;">
+      <br>
+      <span> Copyright &copy; THC Corporation 2020 <a href="#Info" class="fas fa-info-circle"></a></span>
+      <span style="float: right; margin-right: 15px; " > Share <i class="fab fa-twitter"></i> <i class="fab fa-instagram"></i> <i class="fab fa-facebook"></i></span>
+      <br>
+   </div>
+
+</div>
+<!--End of Register-->
+
+<!-- Beginning of forgotPassword -->
+<div data-role="page" id="forgotPassword">
+   <div data-role="header" data-theme='a'> 
+      <h1 class="name_taskbar">My International Map App </h1>
+      <a href="#Sign-in" data-icon="alert" id="buttonalert" class="signin_btn">Sign-in</a>
+      <a href="#Sign-out" data-icon="alert"   class="signout_btn">Sign-out</a>
+      
+      
+      <div data-role="navbar" id="forgotPassword_navbar">
+         <ul>
+            <li><a href="#Home" data-icon="home">Home Page</a></li>
+            <li><a href="#MapCentral" data-icon="star">Map Central</a> </li>
+            <li><a href="#Personal" data-icon="star">Journal</a> </li>
+         </ul>
+      </div>
+   </div>
+
+   <div data-role="content" data-theme='a'>
+      <div>
+         <h1>My International Map App</h1>
+         <h2>Forgot Password?</h2>
+         <img src="images/scobot_VRART_008_leqtsv.jpg" alt="Virtual Frown Face"  class="center">
+      </div>
+
+      <div >
+        
+         <label>Enter your email or username to get started. </label>
+         <input type="text" val="starting value" text="hello" id="forgotPassword_input" /> 
+         <br />
+
+            <!-- Program this to do a page-change -->
+         <br />
+         <button type="button" id="forgotPassword_btn">Submit</button> <br>
+      </div>
+   </div>
+
+   <div data-role="footer" data-theme='a' style="text-align: center;">
+      Copyright &copy; THC Corporation 2020 <a href="#Info" data-role="button" data-icon="info" data-iconpos="notext" style="align-self: flex-end;"></a>
+
+   </div>
+
+</div>
+<!--End of forgotPassword->
+
+
+ </body>
+ </html> 

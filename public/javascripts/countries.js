@@ -2,7 +2,7 @@
 export function inputCountriesNames() {
     //inputting the elements from list to ul to li
     // input data from countries.txt to countries array
-    $.get('../public/text/countries.txt',{},function(content){
+    $.get('text/countries.txt',{},function(content){
       if (content == null) {
         alert('file directory is probably broken');
       } else {
