@@ -38,14 +38,7 @@ export function logIn_1(guest) {
   $( "#submit1" ).click( function(){
     
     //alert($("#fullname").val()+", you failed again"); 
-    if ($("#username").val() === "admin" && $("#password").val() === "admin" ) {
-      // let fullname = $("#fullname").val();
-      // if (fullname === "")
-      // {
-      //   $(".name_taskbar").html("My International Map Application");
-      // } else {
-      //   $(".name_taskbar").html(fullname + "'s Map Application");
-      // }
+    if ($("#username").val() === "username" && $("#password").val() === "password" ) {
 
     //   Easier if I watch a tutorial (Node JS Password Authentication)
     //  Since it'd be on the cloud and I won't have to deal w it again
@@ -53,18 +46,19 @@ export function logIn_1(guest) {
       guest.username = $("#username").val();
       guest.password = $("#password").val();
 
-      alert("Welcome to the Club!"); 
+      alert( "Welcome to the Club!"); 
       $("#username").val("");
       $("#password").val("");
       
       //hide sign-in button once user is logged in
-      $(".signin_btn").hide();
-      $(".signout_btn").show();
+      $(".signin_btn").css("visibility","hidden");
+      $(".signout_btn").css("visibility","visible");
 
       
       
     } else {
       $("#result").html("Unsuccessful Log-in. Try again!");
+      $("#fullname").val("");
       $("#username").val("");
       $("#password").val("");
       
@@ -95,5 +89,3 @@ export function logIn_1(guest) {
         console.log("User logIn status: "+guest.loggedIn);
   })
 }
-
-

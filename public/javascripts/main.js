@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $("#warning").hide();
         $('#countriesDOC').css('background-color','red');
     })
-  
+
   inputCountriesNames();
 
    $('#HomeWrapper').on("keyup", '#searchbar', function() {
