@@ -1,0 +1,8 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/d08a2c08-2ae9-44cf-86d7-cbd61e5660a9/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/InternationalMapFinal",
+    "appService.deploySubpath": "",
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ]
+}
