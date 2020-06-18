@@ -1,0 +1,195 @@
+.center {
+    margin: auto;
+    width: 60%;
+    /* border: 3px solid #73AD21; */
+    padding: 10px;
+}
+
+.flex {
+    box-align: center;  
+    align-items: center;
+
+}
+#myInput {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myUL {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6; /* Grey background color */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: black; /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+div {
+    font-family: serif, Helvetica, sans-serif;
+    margin: auto;
+    border: 3px;
+    
+}
+body {
+    margin: auto;
+    font-family: serif, Helvetica, sans-serif;
+}
+
+.signout_btn {
+  /* display: none; */
+  visibility: hidden;
+}
+
+  /* Circle CSS */
+  .dot {
+    height: 100px;
+    width: 100px;
+    background-color: rgb(137, 30, 224);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* Another approach */
+  .quote-wrapper {
+    height: 320px;
+    position: relative;
+    width: 320px;
+    display: inline-block;
+    
+    margin: 8px;
+
+  }
+
+  .quote-wrapper :hover {
+    background: radial-gradient(
+      ellipse at center,
+      rgb(250, 124, 6) 0%,
+      rgba(0, 128, 172, 1) 70%,
+      rgba(0, 128, 172, 0) 70.3%
+    );
+    transform: scale(1.1);
+    transition: all .2s ease-in-out; 
+    
+  }
+
+  .text {
+    background: radial-gradient(
+      ellipse at center,
+      rgb(9, 209, 19) 0%,
+      rgba(0, 128, 172, 1) 70%,
+      rgba(0, 128, 172, 0) 70.3%
+    );
+    /* background-image: url("../images/shibastfrancis.jpg");
+    background-size: contain; */
+    height: 100%;
+    width: 100%;
+    color: white;
+    position: relative;
+    margin: 0;
+    align-content: center ;
+  }
+
+  .text p {
+    font-size: 21px;
+    font-style: italic;
+    height: 100%;
+    line-height: 1.25;
+    padding: 0;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.3);
+  }
+
+  .text::before {
+    content: "";
+    float: left;
+    height: 100%;
+    width: 50%;
+    shape-outside: polygon(
+      0 0,
+      98% 0,
+      50% 6%,
+      23.4% 17.3%,
+      6% 32.6%,
+      0 50%,
+      6% 65.6%,
+      23.4% 82.7%,
+      50% 94%,
+      98% 100%,
+      0 100%
+    );
+    shape-margin: 7%;
+  }
+
+  .text p::before {
+    content: "";
+    float: right;
+    height: 100%;
+    width: 50%;
+    shape-outside: polygon(
+      2% 0%,
+      100% 0%,
+      100% 100%,
+      2% 100%,
+      50% 94%,
+      76.6% 82.7%,
+      94% 65.6%,
+      100% 50%,
+      94% 32.6%,
+      76.6% 17.3%,
+      50% 6%
+      );
+    shape-margin: 7%;
+  }
+
+  .quote-wrapper blockquote footer {
+    bottom: 25px;
+    font-size: 17px;
+    font-style: italic;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.3);
+    width: 100%;
+  }
+
+
+  .circImg {
+    display: relative;
+    object-fit: contain;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    top: 18%;
+    bottom: 20%;
+    left: 0%;
+    right: 0%;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.3);
+    /* box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2); */
+  }
+
+  #sortability { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortability li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.3em; height: 18px; background-color: #FFFFFF; color: #FFCC33;  }
+  #sortability li span { position: absolute; margin-left: -1.3em; }
+  
+
+ 
