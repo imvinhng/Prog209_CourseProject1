@@ -38,7 +38,7 @@ export function logIn_1(guest) {
   $( "#submit1" ).click( function(){
     
     //alert($("#fullname").val()+", you failed again"); 
-    if ($("#username").val() === "username" && $("#password").val() === "password" ) {
+    if ($("#username").val() === "admin" && $("#password").val() === "admin" ) {
       let fullname = $("#fullname").val();
       if (fullname === "")
       {
